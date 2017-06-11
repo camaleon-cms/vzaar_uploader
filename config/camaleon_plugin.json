@@ -1,0 +1,19 @@
+{
+  "title": "Vzaar Uploader",
+  "descr": "",
+  "key": "vzaar_uploader", // must be the name of the folder of your plugin, sample: app/views/plugins/<my_plugin> ==> 'my_plugin'
+  "helpers": [
+    "Plugins::VzaarUploader::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["vzaar_uploader_on_active"],
+    "on_inactive": ["vzaar_uploader_on_inactive"],
+    "plugin_options": ["vzaar_uploader_on_plugin_options"],
+    "uploader_list_objects": ["vzaar_uploader_list_objects"],
+    "uploader_aws_before_upload": ["vzaar_uploader_before_upload"],
+    "uploader_local_before_upload": ["vzaar_uploader_before_upload"],
+    "post_form_sidebar_custom_html": ["vzaar_post_form_sidebar_custom_html"],
+    "post_type_settings_admin": ["vzaar_post_type_settings_admin"]
+    //here you can add all your hooks (read documentation)
+  }
+}

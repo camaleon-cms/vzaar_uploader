@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Vzaar Video Server Settings</h4>
+    </div>
+    <div class="panel-body">
+        <%= form_tag(url_for(action: :save_settings), class: 'validate') do %>
+          <div class="alert alert-info">Please generate your API <a href="https://app.vzaar.com/settings/api" target="_blank">here.</a></div>
+            <div class="form-group">
+                <label>Vzaar Auth Secret (Client ID)</label>
+                <%= text_field_tag 'options[client_id]', @plugin.get_option('client_id'), class: 'form-control required' %>
+            </div>
+            <div class="form-group">
+                <label>Vzaar Auth Token</label>
+                <%= text_field_tag 'options[auth_token]', @plugin.get_option('auth_token'), class: 'form-control required' %>
+            </div>
+            <div class="form-group text-right">
+                <%= submit_tag 'Save Settings', class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+    </div>
+</div>
