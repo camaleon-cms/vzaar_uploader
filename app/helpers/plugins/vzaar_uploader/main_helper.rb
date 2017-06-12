@@ -26,6 +26,7 @@ module Plugins::VzaarUploader::MainHelper
   # attrs: {prefix, data}
   def vzaar_uploader_list_objects(args)
     files = current_site.get_meta(vzaar_uploader_cacke_key, {})
+    puts files.inspect
     res = files[args[:prefix]] || {}
     args[:data] = args[:data].deep_merge(res)
   end
