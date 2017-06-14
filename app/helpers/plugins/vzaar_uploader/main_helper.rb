@@ -26,8 +26,12 @@ module Plugins::VzaarUploader::MainHelper
   # attrs: {prefix, data}
   def vzaar_uploader_list_objects(args)
     files = current_site.get_meta(vzaar_uploader_cacke_key, {})
+    Rails.logger.info "************************ files (prefix: #{args[:prefix]}): #{files.inspect}"
     res = files[args[:prefix]] || {}
+    Rails.logger.info "************************ res1: #{res.inspect}"
+    Rails.logger.info "************************ data: #{args[:data].inspect}"
     args[:data] = args[:data].deep_merge(res)
+    Rails.logger.info "************************ data result: #{args[:data].inspect}"
   end
 
   #owen2345/secret
