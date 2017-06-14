@@ -2,7 +2,7 @@
 <% if @post.manage_picture?(@post_type) %>
     <div class="panel panel-default panel-lite">
       <div class="panel-heading">
-        <h3 class="panel-title">Featured Video <em class="text-danger">*</em></h3>
+        <h3 class="panel-title">Featured Video</h3>
         <ul class="panel-controls">
           <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
         </ul>
@@ -16,7 +16,7 @@
                 <span class="btn btn-primary btn-xs" onclick="cama_vzaar_upload_featured_video_clear($(this))"><i class="fa fa-times"></i></span>
               </div>
             </a>
-            <input data-error-place='#feature-video ~ .validation-errors:first' class="required" name="meta[featured_video]" type="hidden" value="<%= url %>"/>
+            <input class="" name="meta[featured_video]" type="hidden" value="<%= url %>"/>
           </div>
           <a href="#" class="btn btn-default" onclick="cama_vzaar_upload_featured_video($(this)); return false;"><i class="fa fa-upload"></i> Upload Featured Video</a>
           <div class="validation-errors"></div>
