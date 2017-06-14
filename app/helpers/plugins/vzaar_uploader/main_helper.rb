@@ -30,7 +30,7 @@ module Plugins::VzaarUploader::MainHelper
     res = files[args[:prefix]] || {}
     Rails.logger.info "************************ res1: #{res.inspect}"
     Rails.logger.info "************************ data: #{args[:data].inspect}"
-    args[:data] = args[:data].deep_merge(res)
+    args[:data] = args[:data].with_indifferent_access.deep_merge(res)
     Rails.logger.info "************************ data result: #{args[:data].inspect}"
   end
 
